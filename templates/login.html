@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/message.css' %}">
+    <link rel="stylesheet" href="{% static './css/login.css' %}">
+    <script defer src="{% static 'js/message.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+      <div class='notify-msg msgsuccess'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg>
+       &nbsp {{message}}<span>x</span></div>
+      {%endif%}
+      {%if message.tags == 'error' %}
+      <div class='notify-msg msgerror'><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="currentColor" d="M18 2.1a16 16 0 1 0 16 16a16 16 0 0 0-16-16Zm-1.4 6.7a1.4 1.4 0 0 1 2.8 0v12a1.4 1.4 0 0 1-2.8 0ZM18 28.6a1.8 1.8 0 1 1 1.8-1.8a1.8 1.8 0 0 1-1.8 1.8Z" class="clr-i-solid clr-i-solid-path-1"/><path fill="none" d="M0 0h36v36H0z"/></svg>
+        &nbsp {{message}}<span>x</span></div>
+        {%endif%}
+    {% endfor %}
+    {% endif %}
+
+  <div class="logo">Auto Mail<span>By Satyam</span><div id='plane' ></div></div>
+  <div class='form-wrapper'>
+    
+    <div class='loginheading'><svg viewBox="0 0 100 100" width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fill" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(45 0.5 0.5)"><stop offset="0%" stop-color="#ff4712"></stop><stop offset="100%" stop-color="#fc9c03"></stop></linearGradient></defs><path d="M89.5,64Q83,78,70.5,87Q58,96,46,86.5Q34,77,20.5,71.5Q7,66,6.5,50Q6,34,18,24.5Q30,15,43.5,11.5Q57,8,69.5,15.5Q82,23,89,36.5Q96,50,89.5,64Z" stroke="none" stroke-width="0" fill="url(#fill)"></path></svg><span>Login</span></div>
+    <svg viewBox="0 0 200 200" width="700" height ="700" xmlns="http://www.w3.org/2000/svg">
+      <path  d="M46.4,-65.1C61.2,-62.8,74.9,-51.6,75.7,-38.1C76.5,-24.5,64.3,-8.5,58.6,6.1C52.9,20.7,53.6,33.9,48.6,45.2C43.6,56.4,32.8,65.7,20,70.6C7.2,75.5,-7.6,75.9,-18.2,69.4C-28.8,62.9,-35.2,49.5,-47.9,39.1C-60.5,28.7,-79.4,21.4,-80.4,11.8C-81.3,2.2,-64.4,-9.7,-56.9,-25.9C-49.4,-42.1,-51.3,-62.5,-43.4,-68C-35.5,-73.5,-17.8,-64.1,-1,-62.6C15.8,-61.1,31.7,-67.5,46.4,-65.1Z" transform="translate(100 100)" />
+    </svg>
+ <form  id='loginform' method='POST'>
+  {% csrf_token %}
+  <label>username</label>
+  <input type="text" name='username' autocomplete="off">
+  <label>password</label>
+  <input type="password" name='password'>
+  <button type="submit">submit</button>
+  <a id="createaccount" href="{%url 'register'%}">New User? Create an account</a>
+ </form>
+</div>
+
+<div class="custom-shape-divider-bottom-1680380114">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+  </svg>
+</div>
+ 
+</body>
+</html>

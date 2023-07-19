@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica&family=Molle&display=swap');
+#section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#firstframe{
+    position: relative;
+    top: 8rem;
+    width: 98vw;
+    height: 72vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.campaign-details{
+    background: url('../images/Rectangle\ 14.svg');
+    width: 81%;
+    height: 106%;
+    background-size: cover;
+    position: relative;
+}
+.campaign-img{
+    background: url('../images/consulting\ and\ business\ planning.svg');
+    background-size: cover;
+    width: 39%;
+    height: 59%;
+    position: absolute;
+    bottom: 0;left: -30px;
+}
+.campaign-form{
+    position: absolute;
+    right: 7rem;
+    top: 1rem;
+    font-family: cursive;
+    
+}
+.campaign-form h1{color: white;}
+.campaign-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2rem;
+   margin-top: 3rem;
+}
+.campaign-form form span{
+    height: 4rem;
+    background: #ffffff6e;
+    border-radius: 10px;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+}
+.campaign-form form button{
+    background: #ffd300ab;
+    border: none;
+    width: 30rem;
+    height: 4rem;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.campaign-form form div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.campaign-form form input{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    width: 11rem;
+    height: 4rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+}
+#recieverfile{
+    display: none;
+}
+.campaign-form form div>div{
+    background: white;
+    width: 11rem;
+    height: 4rem;
+    border-radius: 10px;
+    font-size: 1rem; 
+     padding: 1rem;
+     box-sizing: border-box;
+     display: flex;
+     justify-content: center;
+} 
+.campaign-form form div label{display: flex;}
