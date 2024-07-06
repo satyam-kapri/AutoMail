@@ -19,8 +19,7 @@ scroll-margin-top: 8rem;
     top: -243px;
 }
 .secondframeform{
-    /* background: url('../images/mailillustration.avif'); */
-    /* background: #ffe4c491; */
+    
     background: white;
     width: 44%;
     height: 82%;
@@ -262,7 +261,7 @@ display: none;
 
 }
 .attach_file_wrapper label span{
-    background: url(../images/system-solid-49-upload-file.gif);
+    background: url('../images/system-solid-49-upload-file.gif');
     background-size: cover;
     width: 40px;height: 40px;   
     cursor: pointer;
