@@ -132,7 +132,7 @@ display: none;
     width: 20rem;
 }
 .template1{
-    background: url("../images/Group\ 9211.svg");
+    background: url("../images/Group9211.svg");
     background-size: cover;
     width: 10rem;
     background-position: -9px;
@@ -142,7 +142,7 @@ display: none;
     transform: scale(0.8);
 }
 .template2{
-    background: url("../images/Group\ 101.svg");
+    background: url("../images/Group101.svg");
     background-size: cover;
     width: 11rem;
     height: 12rem;

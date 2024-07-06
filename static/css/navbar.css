@@ -28,7 +28,7 @@
   
   }
   .logo span{
-    background:url('../images/Group\ 8.svg');
+    background:url('../images/Group8.svg');
     background-size: cover;
     position: absolute;
     width: 9rem;
@@ -38,7 +38,7 @@
    
   }
   #plane {
-    background: url('../images/Group\ 11.png');
+    background: url('../images/Group11.png');
       background-size: cover;
       position: absolute;
       width: 5rem;

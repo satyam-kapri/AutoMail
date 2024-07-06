@@ -14,14 +14,14 @@
     justify-content: center;
 }
 .campaign-details{
-    background: url('../images/Rectangle\ 14.svg');
+    background: url('../images/Rectangle14.svg');
     width: 81%;
     height: 106%;
     background-size: cover;
     position: relative;
 }
 .campaign-img{
-    background: url('../images/consulting\ and\ business\ planning.svg');
+    background: url('../images/consultingandbusinessplanning.svg');
     background-size: cover;
     width: 39%;
     height: 59%;

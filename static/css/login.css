@@ -39,7 +39,7 @@ animation: backgroundanim 10s cubic-bezier(0.46, 0.46, 0.46, 0.46) infinite alte
     font-weight: normal;
   }
   #plane {
-    background: url('../images/Group\ 11.png');
+    background: url('../images/Group11.png');
       background-size: cover;
       position: absolute;
       width: 5rem;
