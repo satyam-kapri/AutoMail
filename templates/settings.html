@@ -1,0 +1,94 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static './css/settings.css' %}">
+    <title>Settings</title>
+</head>
+<body>
+    <div class='notify-msg msgsuccess' style="display:none"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg>
+        &nbsp;Saved Successfully!<span>x</span></div>
+        <div class='notify-msg msgpending' style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path fill="currentColor" d="M449.07 399.08L278.64 82.58c-12.08-22.44-44.26-22.44-56.35 0L51.87 399.08A32 32 0 0 0 80 446.25h340.89a32 32 0 0 0 28.18-47.17Zm-198.6-1.83a20 20 0 1 1 20-20a20 20 0 0 1-20 20Zm21.72-201.15l-5.74 122a16 16 0 0 1-32 0l-5.74-121.95a21.73 21.73 0 0 1 21.5-22.69h.21a21.74 21.74 0 0 1 21.73 22.7Z"/></svg>&nbsp;Details incomplete!<span>x</span></div>
+    {%include 'navbar.html'%}
+    <div id="illus"></div>
+    <div id="settings-form-wrapper">
+        <div class="edit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="20" stroke-dashoffset="20" d="M3 21H21"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="20;0"/></path><path stroke-dasharray="44" stroke-dashoffset="44" d="M7 17V13L17 3L21 7L11 17H7"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.6s" values="44;0"/></path><path stroke-dasharray="8" stroke-dashoffset="8" d="M14 6L18 10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="1s" dur="0.2s" values="8;0"/></path></g></svg>
+        </div>
+        <div class="question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 320 512"><path fill="white" d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1a87.983 87.983 0 0 0-40.4 74v1.5c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128h-32C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80a40 40 0 1 0 0 80z"/></svg>
+        </div>
+        <form action="/savesettings" method="POST" id="settings-form">
+            {% csrf_token %}
+         <label for="sender-mail"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-miterlimit="10" d="M13.39 12.15v26.39H7.06A2.56 2.56 0 0 1 4.5 36V16.82m30.11-4.67v26.39h6.33A2.56 2.56 0 0 0 43.5 36V16.82"/><path fill="none" stroke="currentColor" stroke-miterlimit="10" d="M24 31.45L43.5 17v-3.6a3.94 3.94 0 0 0-6.28-3.16L24 20.06l-13.22-9.82A3.94 3.94 0 0 0 4.5 13.4V17Z"/></svg><span>Sender's Email </span></label>
+         <input type="Email" name="sender-mail" id="sender-mail" autocomplete="off" disabled/>
+         <label for="sender-app-password"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M34.5 21.523V15a10.5 10.5 0 0 0-21 0v6.523a13.5 13.5 0 1 0 21 0Z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M24 16.5a13.422 13.422 0 0 1 6 1.42V15a6 6 0 0 0-12 0v2.92a13.421 13.421 0 0 1 6-1.42ZM27.5 28a3.5 3.5 0 1 0-5 3.15V36h3v-4.85a3.491 3.491 0 0 0 2-3.15Z"/></svg><span>Sender's App Password</span> </label>
+         <input type="text" name="sender-app-password" id="sender-app-password"  autocomplete="off" disabled/>
+         <label for="openaikey"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><circle cx="33.4" cy="14.8" r="3.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M20.4 20.4a11.47 11.47 0 0 1 5.2-13.3a11.31 11.31 0 0 1 14.1 2.3a11.32 11.32 0 0 1-13 17.9"/><path fill="none" stroke="currentColor" d="M20.4 20.4L5.5 37v5.4h6.1l.7-4.2l6.5-.4l.5-5.5l5.5-.1l1.8-4.8"/></svg> <span>Open AI API key (optional) </span></label>
+         <input type="text" name="openaikey" id="openaikey" autocomplete="off" disabled/>
+         <button type='submit' id="save-btn">Save</button>
+
+        </form>
+    </div>
+    <div class="design">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ff811e" d="M49.4,-42.9C65.4,-33.5,80.6,-16.7,80.6,-0.1C80.5,16.6,65.1,33.2,49.1,39.5C33.2,45.8,16.6,41.9,-2.4,44.3C-21.3,46.6,-42.7,55.3,-56.7,49C-70.8,42.7,-77.5,21.3,-73.7,3.8C-69.9,-13.7,-55.4,-27.4,-41.4,-36.8C-27.4,-46.2,-13.7,-51.3,1.5,-52.8C16.7,-54.3,33.5,-52.3,49.4,-42.9Z" transform="translate(100 100)" />
+      </svg>
+    </div>
+    
+    <div class="info-img" id="info-img">
+    </div>
+    <script mydata="{{ data }}">
+        let data = document.currentScript.getAttribute('mydata');
+        data=JSON.parse(data);
+        console.log(data);
+        document.querySelector('#sender-mail').defaultValue=data[0].fields.sender_mail==null?"":data[0].fields.sender_mail;
+        document.querySelector('#sender-app-password').defaultValue=data[0].fields.app_password==null?"":data[0].fields.app_password;
+        document.querySelector('#openaikey').defaultValue=data[0].fields.openai_api_key==null?"":data[0].fields.openai_api_key;
+        
+        document.querySelector('#settings-form').addEventListener('submit',(e)=>{
+            e.preventDefault(); 
+            let fd= new FormData ();
+            let sender_mail=document.querySelector('#sender-mail').value;
+            let sender_app_psd=document.querySelector('#sender-app-password').value;
+            let apikey=document.querySelector('#openaikey').value;
+            if(sender_mail=="" || sender_app_psd=="")
+               document.querySelector('.msgpending').style.display='flex';
+            else{
+            fd.append('sender-mail',sender_mail);
+            fd.append('sender-app-password',sender_app_psd);
+            fd.append('openaikey',apikey);
+            savefun(fd);
+            document.querySelector('#sender-mail').disabled=true;
+            document.querySelector('#sender-app-password').disabled=true;
+            document.querySelector('#openaikey').disabled=true; 
+            }
+        })
+        async function savefun(fd){
+            await fetch('/savesettings',{
+                method:'POST',
+                body:fd,
+            });
+            document.querySelector('.msgsuccess').style.display='flex';
+            
+        }
+        document.querySelector('.edit').addEventListener('click',()=>{
+            document.querySelector('#sender-mail').disabled=false;
+            document.querySelector('#sender-app-password').disabled=false;
+            document.querySelector('#openaikey').disabled=false;
+        })
+        
+        let msg=document.querySelectorAll('.notify-msg');
+        msg.forEach((e)=>{
+            e.lastChild.addEventListener('click',()=>{e.style.display="none";});
+        });
+        document.querySelector('.question').addEventListener('click',()=>{
+           document.querySelector('#info-img').scrollIntoView({behavior:"smooth"})
+        })
+    </script>
+</body>
+</html>

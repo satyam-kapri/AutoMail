@@ -1,0 +1,130 @@
+:root{
+    --outer-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    --inner-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+body{
+    margin: 0;
+    
+}
+.table-container{
+    width: 54%;
+    height: 72%;
+    background: white;
+    position: absolute;
+    top: 24%;
+    left: 39%;
+    box-shadow: var(--outer-shadow);
+    display: flex;
+    flex-direction: column;
+}
+.table-titles{
+
+background-color: #ff4e00;
+background-image: linear-gradient(315deg, #ff4e00 0%, #e17e00 74%);
+color:white;
+width: auto;
+height: 8%;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+.table-contents{
+    background: url('../images/tablebg.svg');
+    background-size: contain;
+    background-position-x: 53%;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 92%;
+    box-shadow: var(--inner-shadow);
+    overflow-y: scroll;
+}
+.campaign{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+    background: #000000ab;
+    height: 5rem;
+    box-shadow: var(--outer-shadow);
+    border-radius: 5px;
+    margin: 10px;
+}
+.status-scheduled{
+    background: rgb(255, 187, 0);
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+.status-complete{
+    background: #07bc0c;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+.status-failure{
+    background: rgb(202, 7, 7);
+    border-radius: 5px;
+    width: 5rem;
+    color: white;
+    padding: 5px;
+}
+.standing_person{
+    position: absolute;
+    top: 43%;
+    left: 12%;
+    width: 30%;
+    height: 53%;
+    background: url('../images/man\ sitting\ cross-legged\ and\ working\ on\ laptop.png');
+    background-size: cover;
+}
+.blob{
+    position: absolute;
+    width: 368px;
+    top: 16%;
+    height: 320px;
+}
+.blob span{
+    position:absolute;
+    left: 31%;
+    position: absolute;
+    top: 34%;
+    width: 94px;
+    z-index:2;
+}
+#create-new{
+    background: #FC8C09;
+    width: 5rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.campaign-delete{
+    background: rgb(242 1 1);
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    height: 2rem;
+    cursor: pointer;
+}
+.campaign-name{
+    flex-basis: 21%;
+}
+.design{
+position: absolute;
+bottom: -4px;
+width: 100%;
+z-index: -1;
+
+}
+.sch-time{
+    word-wrap: break-word;
+    flex-basis: 18%;
+}

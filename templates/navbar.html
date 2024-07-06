@@ -1,0 +1,14 @@
+<nav>
+    <div class="navbar">
+        <div class="logo">
+            {% comment %} Auto Mail<span>By Satyam</span> {% endcomment %}
+            <span></span>
+            <div id='plane' ></div></div>
+        <div class="navbarlinks">
+        <span ><a href="/home" {%if request.path == '/home' %}class="activenavlink"{%endif%}>New Campaign</a></span>
+        <span ><a href="/allcampaigns" {%if request.path == '/allcampaigns' %}class="activenavlink"{%endif%}>All Campaigns</a></span>
+        <span><a href="/usersettings"{%if request.path == '/usersettings' %}class="activenavlink"{%endif%}>Settings</a></span>
+        </div>
+        <button id='logoutbtn' onclick="location.href='{% url 'logout'%}'">Log out</button>
+       </div>
+</nav>

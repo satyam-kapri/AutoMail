@@ -1,0 +1,56 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static './css/allcampaigns.css' %}">
+    <link rel="stylesheet" href="{% static './css/message.css' %}">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+    <script defer src="{% static 'js/message.js' %}"></script>
+    <script defer src="{% static 'js/allcampaign.js' %}" scheduledata="{{ data }}"></script>
+    <title>All campaigns</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="notify-schedule-bg">
+    <div class='notify-schedule' ><span class="alarmgif"></span><span class="notify-schedule-text"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"/></svg>
+        &nbsp;{{message}}</span>
+        <span class="cross">x</span></div> 
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {%include 'navbar.html'%}
+    <div class="blob"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="bisque" d="M28.3,-50.6C39.1,-42.7,52.1,-40.1,58.1,-32.6C64.2,-25,63.3,-12.5,55,-4.8C46.7,2.9,31,5.9,28.4,19.4C25.8,33,36.4,57.2,33.9,57.9C31.4,58.6,15.7,35.8,2.6,31.4C-10.5,26.9,-21.1,40.8,-33.1,45.6C-45.1,50.4,-58.7,46,-65.8,36.9C-72.8,27.8,-73.4,13.9,-73.8,-0.2C-74.2,-14.4,-74.5,-28.8,-66.5,-36.2C-58.5,-43.7,-42.1,-44.1,-29.6,-51.1C-17.2,-58,-8.6,-71.5,0.1,-71.6C8.7,-71.7,17.4,-58.5,28.3,-50.6Z" transform="translate(100 100)" />
+      </svg>
+      <span>
+      Want to create more campaigns?
+      <button id="create-new" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4v4Zm1 5q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Z"/></svg>Create</button>
+      </span>
+    </div>
+    <div class="standing_person"></div>
+ <div class="table-container">
+    <div class="table-titles">
+        <span>Campaign Name</span>
+        <span>Scheduled time</span>
+        <span>Status</span>
+        <span>Remove</span>
+    </div>
+    <div class="table-contents">
+     
+     </div>
+    </div>
+ </div>
+ <div class='design'>
+    <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(243, 106, 62, 1)" offset="0%"></stop><stop stop-color="rgba(255, 179, 11, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,441L120,408.3C240,376,480,310,720,236.8C960,163,1200,82,1440,98C1680,114,1920,229,2160,236.8C2400,245,2640,147,2880,106.2C3120,65,3360,82,3600,81.7C3840,82,4080,65,4320,57.2C4560,49,4800,49,5040,73.5C5280,98,5520,147,5760,212.3C6000,278,6240,359,6480,343C6720,327,6960,212,7200,155.2C7440,98,7680,98,7920,81.7C8160,65,8400,33,8640,81.7C8880,131,9120,261,9360,310.3C9600,359,9840,327,10080,269.5C10320,212,10560,131,10800,155.2C11040,180,11280,310,11520,359.3C11760,408,12000,376,12240,302.2C12480,229,12720,114,12960,130.7C13200,147,13440,294,13680,359.3C13920,425,14160,408,14400,351.2C14640,294,14880,196,15120,130.7C15360,65,15600,33,15840,24.5C16080,16,16320,33,16560,98C16800,163,17040,278,17160,334.8L17280,392L17280,490L17160,490C17040,490,16800,490,16560,490C16320,490,16080,490,15840,490C15600,490,15360,490,15120,490C14880,490,14640,490,14400,490C14160,490,13920,490,13680,490C13440,490,13200,490,12960,490C12720,490,12480,490,12240,490C12000,490,11760,490,11520,490C11280,490,11040,490,10800,490C10560,490,10320,490,10080,490C9840,490,9600,490,9360,490C9120,490,8880,490,8640,490C8400,490,8160,490,7920,490C7680,490,7440,490,7200,490C6960,490,6720,490,6480,490C6240,490,6000,490,5760,490C5520,490,5280,490,5040,490C4800,490,4560,490,4320,490C4080,490,3840,490,3600,490C3360,490,3120,490,2880,490C2640,490,2400,490,2160,490C1920,490,1680,490,1440,490C1200,490,960,490,720,490C480,490,240,490,120,490L0,490Z"></path></svg>
+   
+ </div>
+ 
+</body>
+</html>

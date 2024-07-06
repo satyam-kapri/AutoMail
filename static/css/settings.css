@@ -1,0 +1,153 @@
+#settings-form-wrapper{
+
+    background: white;
+    width: 40%;
+    height: 70%;
+    border-radius:10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    padding:10px;
+    position: absolute;
+    top: 20%;
+    right:20%;
+    
+    
+}
+#settings-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding:2rem;
+}
+
+#save-btn{
+    width: 100%;
+    height: 3rem;
+    background: #f87b1ef5;
+    border-radius: 18px;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+#illus{
+    position: absolute;
+    top: 43%;
+    left: 9%;
+    background: url('../images/young\ man\ in\ headset\ using\ computer.png');
+    background-size: cover;
+    width: 23vw;
+    height: 55vh;
+
+}
+.info-img{
+    background: url('https://lh6.googleusercontent.com/NvecapVoZpHJEA5zHDZYf44V7Ykkr3Tbo6wiYH0CYEiDmB0LwnWwEt9DC0kZhK0i-N3r-hdKxgeNXlGDkpVlxcJxOTPRPpJlBSDf14IT_NLJX87CsvI1OzfxBiiTJMNg8yNmJVKGuo5_i5cszs1E8U0');
+    width: 50%;
+    background-size: cover;
+    height: 62%;
+    position: absolute;
+    bottom: -77%;
+    left: 27%;
+    border-radius: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.edit{
+    position: absolute;
+    right: -13%;
+    top: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f88a1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}   
+.question{
+    position: absolute;
+    right: -13%;
+    top: 30%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f88a1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+input{
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    margin-bottom: 3rem;
+    border: none;
+    font-size: 1rem;
+    color: black;
+    background: transparent;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 2px solid grey;
+}
+input:disabled{
+    width: 100%;
+    height: 3rem;
+    outline: none;
+    margin-bottom: 3rem;
+    border: none;
+    font-size: 0.8rem;
+    color:grey;
+   background: transparent;
+    padding: 10px; 
+    box-sizing: border-box; 
+    border-bottom: 1px solid grey;
+}
+label svg{
+    margin-right:0.5rem;
+}
+label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: grey;
+    
+}
+.notify-msg{
+    position:fixed;
+    left: 36vw;
+   
+    width: 30vw;
+    height: 65px;
+    top: 20px;
+    z-index: 40;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    animation: jumpin 0.8s cubic-bezier(1, 0.44, 0, 1.2) 1 forwards;
+  
+}
+.msgsuccess{ background:  #07bc0c;}
+.msgerror{background: rgb(202, 7, 7);}
+.msgpending{background: rgb(255, 187, 0);}
+.notify-msg span:not(.msgtxt){
+    position: absolute;
+    right:12px;top:3px;color: aliceblue;
+    cursor: pointer;
+}
+@keyframes jumpin {
+    0%{
+    top:-100px;opacity: 0;
+    }
+    100%{
+        top:20px;opacity: 1;
+    }
+}
+#info-img{
+    scroll-margin-top: 8rem;
+}

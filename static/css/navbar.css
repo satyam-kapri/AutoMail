@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Economica&family=Molle&display=swap');
+:root{
+    font-family: cursive;
+  }
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+    z-index: 20;
+     background: white;
+     top: 0;
+      height: 6rem;
+  }
+
+.logo{
+    display: flex;
+    font-size: 3rem;
+    width: 15rem;
+    height: 5rem;
+    margin-left: 4rem;
+    font-family: 'Economica', sans-serif;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  .logo span{
+    background:url('../images/Group\ 8.svg');
+    background-size: cover;
+    position: absolute;
+    width: 9rem;
+    height: 4rem;
+    top: 1.5rem;
+    left: 7.6rem;
+   
+  }
+  #plane {
+    background: url('../images/Group\ 11.png');
+      background-size: cover;
+      position: absolute;
+      width: 5rem;
+      left: 15.4rem;
+      top: 1rem;
+      height: 3rem;
+      animation: plane 5s cubic-bezier(0.12, 0.41, 0.54, 1.1) infinite;
+  }
+  @keyframes plane {
+    0%{
+      transform: translate(-400px,100px) rotate(45deg);
+    }
+    20%{
+      transform: translate(0,0) rotate(0deg);
+    }
+    100%{
+      transform: translate(0,0) rotate(0deg);
+    }
+  }
+.navbarlinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 28%;
+    margin-left: 25rem;
+    
+}
+.navbarlinks a{
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.navbarlinks a.activenavlink{
+   
+    color: #ff8900;
+    background: #ffbb0842;
+    width: 7rem;
+    border-radius: 10px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#logoutbtn{
+    background: #FC8C09;
+   width: 6rem;
+   height: 3rem;
+   padding: 1rem;
+   border: none;
+   border-radius: 24px;
+   box-shadow: 6px 8px 36px #FC8C09;
+   margin-right: 7rem;
+   color: white;
+   cursor: pointer;
+}

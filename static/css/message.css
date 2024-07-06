@@ -1,0 +1,93 @@
+.notify-msg{
+    position:fixed;
+    left: 36vw;
+   
+    width: 30vw;
+    height: 65px;
+    top: 20px;
+    z-index: 40;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    animation: jumpin 0.8s cubic-bezier(1, 0.44, 0, 1.2) 1 forwards;
+    /* animation: jumpin 0.3s cubic-bezier(0, 1.35, 1, 1.48) 1 forwards; */
+}
+.msgsuccess{ background:  #07bc0c;}
+.msgerror{background: rgb(202, 7, 7);}
+.msgpending{background: rgb(255, 187, 0);}
+.notify-msg span{
+    position: absolute;
+    right:12px;top:3px;color: aliceblue;
+    cursor: pointer;
+}
+@keyframes jumpin {
+    0%{
+    top:-100px;opacity: 0;
+    }
+    100%{
+        top:20px;opacity: 1;
+    }
+}
+.notify-schedule{
+    background: #07bc0c;
+    position: fixed;
+    width: 400px;
+    top: 21%;
+    left: 35%;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow:  rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+animation: jumpinschedule 0.8s cubic-bezier(1, 0.44, 0, 1.2) 1 forwards;
+color: white;
+z-index: 200;
+}
+@keyframes jumpinschedule {
+    0%{
+    top:-50%;opacity: 0;
+    }
+    100%{
+        top:21%;opacity: 1;
+    }
+}
+.alarmgif{
+    background: url('../images/system-solid-7-alarm.gif');
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.cross{
+    position: absolute;
+    top: -9px;
+    right: 13px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.notify-schedule span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notify-schedule-text{
+    height: 45%;
+    background-color: white;
+    color: black;
+    width: 100%;
+    position: relative;
+    bottom: -11%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.notify-schedule-bg{
+    background: rgb(0 0 0 / 76%);
+    width:100vw;
+    height: 100vh;
+    position:fixed;
+    z-index: 200;
+}   
